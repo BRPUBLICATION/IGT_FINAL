@@ -1,0 +1,4379 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>igt final</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute of Global Technology - Gateway to Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #D82B1F;
+            --secondary-color: #F8B334;
+            --accent-color: #2C5F2D;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        /* Page Transition */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* Home Page */
+        #home-page {
+            padding-top: 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Highlights Section */
+        .highlights {
+            background-color: var(--light-color);
+            padding: 60px 0;
+        }
+        
+        .highlight-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .highlight-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .highlight-card p {
+            color: var(--text-light);
+        }
+        
+        .about {
+        background: linear-gradient(135deg, #fff9e6 0%, #ffefba 100%);
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .about:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23ffd700" opacity="0.05" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+        background-size: cover;
+        z-index: 0;
+    }
+    
+    .about .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .section-subtitle {
+        display: block;
+        color: #d4af37;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #d4af37;
+    }
+    
+    .section-description {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+    
+    .about-content {
+        display: flex;
+        align-items: center;
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+    
+    .about-img {
+        flex: 1;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .about-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+    
+    .about-img:hover img {
+        transform: scale(1.03);
+    }
+    
+    .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(212,175,55,0.05) 100%);
+    }
+    
+    .about-text {
+        flex: 1;
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .about-text p {
+        color: #555;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+    
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        margin: 2.5rem 0;
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #d4af37;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .btn-gold {
+        background: #d4af37;
+        color: white;
+        border: 2px solid #d4af37;
+        padding: 0.8rem 1.8rem;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-gold:hover {
+        background: #c9a227;
+        border-color: #c9a227;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .about-content {
+            flex-direction: column;
+        }
+        
+        .about-img, .about-text {
+            width: 100%;
+        }
+        
+        .stats {
+            justify-content: space-around;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .stats {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+    }
+      
+      /* Course Images */
+.course-image {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Project Images */
+.project-image {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Adjust card layout to accommodate images */
+.course-item, .project-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.course-item:hover, .project-item:hover {
+    transform: translateY(-5px);
+}
+
+.course-item h4, .project-item h4 {
+    padding: 0 15px;
+    margin-top: 0;
+}
+
+.course-item p, .project-item p {
+    padding: 0 15px 15px;
+}
+
+/* Events Section Styles */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.event-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-item:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-details {
+    padding: 20px;
+}
+
+.event-details h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #2c3e50;
+}
+
+.event-details p {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.event-meta i {
+    margin-right: 5px;
+    color: #3498db;
+}
+
+/* Event Tabs */
+.event-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.event-tab {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.event-tab:hover {
+    background: #e9ecef;
+}
+
+.event-tab.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Event Content */
+.event-content {
+    display: none;
+}
+
+.event-content.active {
+    display: block;
+}
+
+/* Admissions Page Styles */
+.admissions-hero {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.admissions-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.admissions-hero .lead {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    display: block;
+    color: #3498db;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Steps Cards */
+.admission-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.step-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-top: 4px solid #3498db;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.step-header {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3498db;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step-icon {
+    background: #f8f9fa;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-icon svg {
+    width: 30px;
+    height: 30px;
+    color: #3498db;
+}
+
+.step-card h3 {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.step-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Detail Cards */
+.admission-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.detail-card.highlight-card {
+    border-top: 4px solid #e74c3c;
+}
+
+.card-header {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.card-icon {
+    background: #3498db;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.high
+         /* Programs Section Styles */
+    .programs {
+        background: linear-gradient(135deg, #f9ecec 0%, #f5e1e1 100%);
+        padding: 5rem 0;
+        position: relative;
+    }
+    
+    .programs:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23800000" opacity="0.03" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+        background-size: cover;
+        z-index: 0;
+    }
+    
+    .programs .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .section-subtitle {
+        display: block;
+        color: #800000;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        position: relative;
+    }
+    
+    .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #800000;
+    }
+    
+    .section-description {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin: 3rem 0;
+    }
+    
+    .program-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-top: 4px solid #800000;
+    }
+    
+    .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .program-img {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .program-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .program-card:hover .program-img img {
+        transform: scale(1.1);
+    }
+    
+    .program-content {
+        padding: 25px;
+    }
+    
+    .program-content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #800000;
+    }
+    
+    .program-content p {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .program-meta {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .program-meta span {
+        display: flex;
+        align-items: center;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .program-meta i {
+        margin-right: 5px;
+        color: #800000;
+    }
+    
+    .btn-maroon {
+        background: #800000;
+        color: white;
+        border: 2px solid #800000;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-maroon:hover {
+        background: #6d0000;
+        border-color: #6d0000;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(128, 0, 0, 0.2);
+    }
+    
+    .btn-outline-maroon {
+        background: transparent;
+        color: #800000;
+        border: 2px solid #800000;
+        padding: 0.8rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-maroon:hover {
+        background: #800000;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .programs-cta {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    .programs-cta p {
+        color: #666;
+        margin-bottom: 1rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .programs-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .program-meta {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+        }
+    }
+        
+       /* Upcoming Courses Section Styles */
+    .upcoming-courses {
+        background: linear-gradient(135deg, #fff9e6 0%, #ffefba 100%);
+        padding: 5rem 0;
+        position: relative;
+    }
+    
+    .upcoming-courses:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%23d4af37" opacity="0.05" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+        background-size: cover;
+        z-index: 0;
+    }
+    
+    .upcoming-courses .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .section-subtitle {
+        display: block;
+        color: #d4af37;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        position: relative;
+    }
+    
+    .section-title h2:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #d4af37;
+    }
+    
+    .section-description {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .course-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .course-tab {
+        padding: 12px 24px;
+        background-color: rgba(212, 175, 55, 0.1);
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        color: #333;
+    }
+    
+    .course-tab:hover {
+        background-color: rgba(212, 175, 55, 0.3);
+    }
+    
+    .course-tab.active {
+        background-color: #d4af37;
+        color: white;
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .course-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .course-item {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid #d4af37;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .course-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: #d4af37;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .course-item h4 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    
+    .course-instructor {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        font-style: italic;
+    }
+    
+    .course-item p {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .course-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px 0;
+        font-size: 0.85rem;
+        color: #666;
+    }
+    
+    .course-meta i {
+        color: #d4af37;
+        margin-right: 5px;
+    }
+    
+    .btn-gold {
+        background: #d4af37;
+        color: white;
+        border: 2px solid #d4af37;
+        padding: 0.7rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-gold:hover {
+        background: #c9a227;
+        border-color: #c9a227;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .btn-outline-gold {
+        background: transparent;
+        color: #d4af37;
+        border: 2px solid #d4af37;
+        padding: 0.7rem 1.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-gold:hover {
+        background: #d4af37;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .view-all {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .course-list {
+            grid-template-columns: 1fr;
+        }
+        
+        .course-tabs {
+            justify-content: flex-start;
+        }
+    }
+        
+        /* Research Section */
+        .research {
+            background-color: var(--light-color);
+        }
+        
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .research-card ul {
+            margin-left: 20px;
+            color: var(--text-light);
+        }
+        
+        .research-card ul li {
+            margin-bottom: 8px;
+        }
+        
+        /* Ongoing Projects */
+        .projects {
+            margin-top: 50px;
+        }
+        
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .project-tab {
+            padding: 10px 20px;
+            background-color: var(--light-color);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        .project-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .project-content {
+            display: none;
+        }
+        
+        .project-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .project-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .project-item p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        /* Events Section */
+        .events {
+            background-color: white;
+        }
+        
+        .event-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .event-tab {
+            padding: 10px 20px;
+            background-color: var(--light-color);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        
+        .event-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .event-content {
+            display: none;
+        }
+        
+        .event-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .event-item {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .event-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .event-item p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+      
+    
+        /* Base Styles */
+        .program-page {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #4a6bdf;
+            color: white;
+            border: 2px solid #4a6bdf;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a5bd9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 107, 223, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--card-color);
+            border: 2px solid var(--card-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--card-color);
+            color: white;
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline-white:hover {
+            background-color: white;
+            color: #4a6bdf;
+        }
+
+        .btn-apply {
+            background-color: var(--card-color);
+            color: white;
+            border: 2px solid var(--card-color);
+        }
+
+        .btn-apply:hover {
+            background-color: transparent;
+            color: var(--card-color);
+        }
+
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 107, 223, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(74, 107, 223, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 107, 223, 0);
+            }
+        }
+
+        /* Hero Section */
+        .program-hero {
+            background: linear-gradient(135deg, #4a6bdf 0%, #6c5ce7 100%);
+            color: white;
+            padding: 100px 0 150px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0;
+            animation: fadeIn 1s 0.5s forwards;
+        }
+
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23ffffff" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23ffffff" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"/></svg>');
+            background-size: cover;
+        }
+
+        /* Department Sections */
+        .department-section {
+            margin: 80px 0;
+            opacity: 0;
+            width: 100%;
+        }
+
+        .department-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .department-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a6bdf 0%, #6c5ce7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .department-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #2d3436;
+        }
+
+        .department-header p {
+            color: #636e72;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Program Cards - Centered */
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+            gap: 30px;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-card .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--card-color);
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+
+        .program-card:hover .card-bg {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .program-card.diploma {
+            border: 2px solid var(--card-color);
+        }
+
+        .program-img {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-img img {
+            transform: scale(1.05);
+        }
+
+        .program-code {
+            display: inline-block;
+            background-color: #f5f6fa;
+            color: var(--card-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2d3436;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        .program-meta i {
+            margin-right: 5px;
+        }
+
+        .program-card p {
+            color: #636e72;
+            margin-bottom: 25px;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* CTA Section */
+        .program-cta {
+            background: linear-gradient(135deg, #4a6bdf 0%, #6c5ce7 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            opacity: 0;
+        }
+
+        .program-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .program-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        .animate-fade-in-delay {
+            animation: fadeIn 1s 0.5s forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 1s forwards;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .program-cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .department-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .program-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Admissions Section */
+        .admissions {
+            background-color: var(--light-color);
+        }
+        
+        .admission-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .step-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .admission-details {
+            margin-top: 50px;
+        }
+        
+        .detail-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .detail-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .detail-card ul {
+            margin-left: 20px;
+            color: var(--text-light);
+        }
+        
+        .detail-card ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .contact-text p {
+            margin-bottom: 0;
+            color: var(--text-light);
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .contact-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(216, 43, 31, 0.1);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .map-container {
+            margin-top: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        /* Programs Page */
+        .program-page {
+            padding-top: 100px;
+        }
+        
+        .program-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .program-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .program-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .program-details {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-item {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .program-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-code {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .program-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .program-duration {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .program-duration i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .program-item p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        /* Departments Page */
+        .departments-page {
+            padding-top: 100px;
+        }
+        
+        .departments-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .departments-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 80px 0;
+        }
+        
+        .department-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .department-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .department-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .department-card:hover .department-img img {
+            transform: scale(1.1);
+        }
+        
+        .department-content {
+            padding: 25px;
+        }
+        
+        .department-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .department-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .department-content ul {
+            margin-left: 20px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .department-content ul li {
+            margin-bottom: 8px;
+        }
+        
+        /* Faculty Page */
+        .faculty-page {
+            padding-top: 100px;
+        }
+        
+        .faculty-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .faculty-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 0;
+        }
+        
+        .faculty-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faculty-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .faculty-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .faculty-card:hover .faculty-img img {
+            transform: scale(1.05);
+        }
+        
+        .faculty-info {
+            padding: 25px;
+        }
+        
+        .faculty-info h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .faculty-info p.position {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .faculty-info p.bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .faculty-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .faculty-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .faculty-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+      .faculty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faculty-card {
+    display: flex;
+    gap: 30px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.faculty-img {
+    flex: 0 0 250px;
+}
+
+.faculty-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.faculty-info {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .faculty-card {
+        flex-direction: column;
+    }
+    
+    .faculty-img {
+        flex: 0 0 auto;
+    }
+}
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e6a328;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-img,
+            .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+            
+            .programs-grid,
+            .research-areas,
+            .program-list,
+            .department-grid,
+            .faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                transition: all 0.5s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .program-header h1,
+            .departments-header h1,
+            .faculty-header h1 {
+                font-size: 36px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .program-header h1,
+            .departments-header h1,
+            .faculty-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.ibb.co/cSBD74Mm/Red-Yellow-Vintage-Classic-School-Academy-Logo.png" alt="Institute of Global Technology Logo">
+                <div class="logo-text">
+                    <h1>INSTITUTE OF GLOBAL TECHNOLOGY</h1>
+                    <p>Gateway to Excellence in Technology Education</p>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul id="menu">
+                    <li><a href="#" class="nav-link active" data-page="home-page">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="programs-page">Programs</a></li>
+                    <li><a href="#" class="nav-link" data-page="departments-page">Departments</a></li>
+                    <li><a href="#" class="nav-link" data-page="faculty-page">Faculty</a></li>
+                    <li><a href="#" class="nav-link" data-page="admissions-page">Admissions</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact-page">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>WELCOME TO INSTITUTE OF GLOBAL TECHNOLOGY</h1>
+                    <p>Empowering students through cutting-edge technology education, innovative research, and holistic development for a brighter future.</p>
+                  <h2 style="text-transform: uppercase; font-size: 24px; color: #FFD700; font-weight: bold; margin-top: 20px;">
+    Accredited by AIAB Europe
+</h2>
+
+
+
+
+                    
+                </div>
+            </div>
+        </section>
+
+<!-- Highlights Section -->
+<section class="highlights">
+    <div class="container">
+        <div class="highlight-container">
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Industrial Partners">
+                </div>
+                <h3>100+ Industrial Partners</h3>
+                <p>Strong collaborations with leading technology companies for research and placements</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Expert Instructors">
+                </div>
+                <h3>Learn from Experts</h3>
+                <p>Instruction from national and international experts in their respective fields</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Career Support">
+                </div>
+                <h3>Placement Assistance</h3>
+                <p>Complete placement support with career counseling and interview preparation</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Research Lab">
+                </div>
+                <h3>Advanced Research</h3>
+                <p>Opportunities to work on innovative research projects with commercialization potential</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Startup Meeting">
+                </div>
+                <h3>Entrepreneurship Support</h3>
+                <p>Incubation center and mentorship for student startups and innovations</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>ABOUT INSTITUTE OF GLOBAL TECHNOLOGY</h2>
+                    <p>Discover our mission, vision, and values that guide us in providing exceptional technology education</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Institute of Global Technology Campus">
+                    </div>
+                    <div class="about-text">
+                        <h3>Transforming Technology Education Since 2005</h3>
+                        <p>The Institute of Global Technology was established with a vision to create a center of excellence in technology education that caters to the evolving needs of industry and society. Over the years, we have grown into a premier institution known for our academic rigor, innovative pedagogy, and commitment to student success.</p>
+                        <p>Our campus provides a vibrant learning environment with state-of-the-art facilities, experienced faculty, and numerous opportunities for research and professional development in emerging technologies.</p>
+                      <h2 style="text-transform: uppercase; font-size: 24px; color: black; font-weight: bold; margin-top: 20px;">
+    Accredited by AIAB Europe
+</h2>
+
+                        <div class="stats">
+                            <div class="stat-item">
+                                <div class="stat-number">6000+</div>
+                                <div class="stat-label">Students</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">300+</div>
+                                <div class="stat-label">Faculty</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">60+</div>
+                                <div class="stat-label">Programs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Academic Programs</h2>
+                    <p>Explore our diverse range of postgraduate diploma programs in emerging technologies</p>
+                </div>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI & Robotics Programs">
+                        </div>
+                        <div class="program-content">
+                            <h3>PGDM in Medical Robotics</h3>
+                            <p>Specialized program focusing on robotic applications in healthcare and medical procedures.</p>
+                            <a href="#" class="btn btn-outline" data-page="programs-page">Learn More</a>
+                            <div class="program-meta">
+                                <span><i class="fas fa-graduation-cap"></i> PG Diploma</span>
+                                <span><i class="fas fa-clock"></i> 12 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agriculture Technology">
+                        </div>
+                        <div class="program-content">
+                            <h3>PGDM in Agri Robotics</h3>
+                            <p>Develop skills in designing and implementing robotic solutions for agricultural applications.</p>
+                            <a href="#" class="btn btn-outline" data-page="programs-page">Learn More</a>
+                            <div class="program-meta">
+                                <span><i class="fas fa-graduation-cap"></i> PG Diploma</span>
+                                <span><i class="fas fa-clock"></i> 12 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-img">
+                            <img src="https://i.ibb.co/F4rSCY3F/download-33.jpg" alt="Drone Technology">
+                        </div>
+                        <div class="program-content">
+                            <h3>PGDM in Agri Drones</h3>
+                            <p>Master drone technology applications in agriculture including crop monitoring and precision farming.</p>
+                            <a href="#" class="btn btn-outline" data-page="programs-page">Learn More</a>
+                            <div class="program-meta">
+                                <span><i class="fas fa-graduation-cap"></i> PG Diploma</span>
+                                <span><i class="fas fa-clock"></i> 12 Months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <!-- Upcoming Courses Section -->
+<section class="upcoming-courses">
+    <div class="container">
+        <div class="section-title">
+            <span class="section-subtitle">Expand Your Knowledge</span>
+            <h2>Upcoming Courses</h2>
+            <p class="section-description">Discover our latest course offerings designed to keep you at the forefront of technology</p>
+        </div>
+        
+       
+        <div class="course-content active" id="all">
+            <div class="course-list">
+                <!-- Highlighted Course 1 -->
+                <div class="course-item highlighted">
+                    <div class="course-badge">Featured</div>
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Drone Manufacturing">
+                    </div>
+                    <h4>PGDM in Drone Manufacturing</h4>
+                    <p class="course-instructor">Dr. Rajesh Kumar</p>
+                    <p>Comprehensive program covering drone design, manufacturing, and industrial applications with hands-on training.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Jan 15, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Highlighted Course 2 -->
+                <div class="course-item highlighted">
+                    <div class="course-badge">Featured</div>
+                    <div class="course-image">
+                        <img src="https://i.ibb.co/DPfK12jW/download-32.jpg" alt="Agriculture Robotics">
+                    </div>
+                    <h4>PGDM in Agriculture Robotics</h4>
+                    <p class="course-instructor">Dr. Priya Sharma</p>
+                    <p>Specialized training in robotic systems for modern farming, automation, and precision agriculture techniques.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Feb 1, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Course Item 3 -->
+                <div class="course-item">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medical Robotics">
+                    </div>
+                    <h4>PGDM in Medical Robotics</h4>
+                    <p class="course-instructor">Dr. Anil Mehta</p>
+                    <p>Advanced program focusing on robotic applications in healthcare, surgery, and medical diagnostics.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Mar 5, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Course Item 4 -->
+                <div class="course-item">
+                    <div class="course-image">
+                        <img src="https://i.ibb.co/F4rSCY3F/download-33.jpg" alt="Agri Drones">
+                    </div>
+                    <h4>PGDM in Agri Drones</h4>
+                    <p class="course-instructor">Prof. Sanjay Patel</p>
+                    <p>Master drone technology applications in agriculture including crop monitoring and precision farming.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Jan 22, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Course Item 5 -->
+                <div class="course-item">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI in Agriculture">
+                    </div>
+                    <h4>PGDM in AI & ML in Agriculture</h4>
+                    <p class="course-instructor">Dr. Neha Gupta</p>
+                    <p>Apply artificial intelligence and machine learning techniques to solve agricultural challenges.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Feb 15, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Course Item 6 -->
+                <div class="course-item">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Precision Agriculture">
+                    </div>
+                    <h4>PGDM in Precision Agriculture</h4>
+                    <p class="course-instructor">Dr. Amit Joshi</p>
+                    <p>Learn data-driven farming techniques, IoT applications, and smart agriculture technologies.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Mar 1, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+                
+                <!-- Course Item 7 -->
+                <div class="course-item">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrial Robotics">
+                    </div>
+                    <h4>PGDM in Industrial Robotics</h4>
+                    <p class="course-instructor">Prof. Vikram Singh</p>
+                    <p>Comprehensive training in robotic automation for manufacturing and industrial applications.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Starts: Feb 10, 2024</span>
+                        <span><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <a href="#" class="btn btn-gold">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-all">
+            <a href="#" class="btn btn-outline-gold">View All Upcoming Courses</a>
+        </div>
+    </div>
+</section>
+
+<!-- Research Section -->
+<section class="research">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Ongoing Research Projects</h2>
+            <p>Explore our cutting-edge research initiatives across various technology domains</p>
+        </div>
+
+        <!-- Artificial Intelligence -->
+        <div class="project-category">
+            <h3>Artificial Intelligence</h3>
+            <div class="project-list">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Predictive Maintenance">
+                    </div>
+                    <h4>AI-Powered Predictive Maintenance</h4>
+                    <p>Developing AI models for predictive maintenance of industrial equipment to reduce downtime.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI Assistant">
+                    </div>
+                    <h4>Conversational AI Assistant</h4>
+                    <p>Creating an AI assistant for mental health support and counseling services.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Disease Detection">
+                    </div>
+                    <h4>Automated Disease Detection</h4>
+                    <p>Using deep learning for automated detection of diseases in medical images.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="project-category">
+            <h3>Healthcare</h3>
+            <div class="project-list">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Diagnostic Device">
+                    </div>
+                    <h4>Point-of-Care Diagnostic Device</h4>
+                    <p>Developing portable diagnostic tools for rapid detection of infectious diseases.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Wearable Health Monitor">
+                    </div>
+                    <h4>Wearable Health Monitor</h4>
+                    <p>Creating wearable devices for continuous health monitoring and early warning systems.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cancer Treatment">
+                    </div>
+                    <h4>Personalized Cancer Treatment</h4>
+                    <p>Using AI and genomics to develop personalized cancer treatment plans.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Energy & Environment -->
+        <div class="project-category">
+            <h3>Energy & Environment</h3>
+            <div class="project-list">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Solar Desalination">
+                    </div>
+                    <h4>Solar-Powered Desalination</h4>
+                    <p>Developing solar-powered water desalination plants for coastal communities.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smart Grid">
+                    </div>
+                    <h4>Smart Grid Systems</h4>
+                    <p>Creating intelligent grid systems for efficient energy distribution and management.</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="EV Charging">
+                    </div>
+                    <h4>EV Charging Infrastructure</h4>
+                    <p>Designing urban electric vehicle charging networks for sustainable transportation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add More Categories Here If Needed -->
+
+    </div>
+</section>
+
+        <!-- Events Section -->
+<section class="events">
+    <div class="container">
+        <div class="section-title">
+            <h2>Conferences, Webinars & Certificate Courses</h2>
+            <p>Participate in our knowledge-sharing events and short-term certification programs</p>
+        </div>
+        <div class="event-tabs">
+            <button class="event-tab active" data-tab="conferences">Conferences</button>
+            <button class="event-tab" data-tab="webinars">Webinars</button>
+            <button class="event-tab" data-tab="certificates">Certificate Courses</button>
+        </div>
+        
+        <!-- Conferences Content -->
+        <div class="event-content active" id="conferences-events">
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI & Robotics Conference">
+                    </div>
+                    <div class="event-details">
+                        <h4>International Conference on AI & Robotics</h4>
+                        <p>Annual gathering of AI and robotics experts from academia and industry to discuss latest advancements.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> June 15-17, 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Virtual & On-campus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tech for Sustainable Development">
+                    </div>
+                    <div class="event-details">
+                        <h4>Tech for Sustainable Development</h4>
+                        <p>Exploring technological solutions for achieving sustainable development goals.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> July 5-7, 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Campus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Future of Agri-Tech">
+                    </div>
+                    <div class="event-details">
+                        <h4>Future of Agri-Tech</h4>
+                        <p>Conference focusing on emerging technologies in agriculture and food production.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> August 12-14, 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Agricultural Research Center</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Webinars Content -->
+        <div class="event-content" id="webinars-events">
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Drone Technology Webinar">
+                    </div>
+                    <div class="event-details">
+                        <h4>Introduction to Drone Technology</h4>
+                        <p>Free webinar covering basics of drone technology and its industrial applications.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> June 22, 2023</span>
+                            <span><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI Career Webinar">
+                    </div>
+                    <div class="event-details">
+                        <h4>Career in AI & ML</h4>
+                        <p>Webinar discussing career opportunities and skill requirements in AI/ML fields.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> July 10, 2023</span>
+                            <span><i class="fas fa-clock"></i> 11:00 AM - 1:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://i.ibb.co/F4rSCY3F/download-33.jpg" alt="Precision Agriculture Webinar">
+                    </div>
+                    <div class="event-details">
+                        <h4>Precision Agriculture Techniques</h4>
+                        <p>Learn about modern precision farming methods using IoT and data analytics.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> August 5, 2023</span>
+                            <span><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Certificate Courses Content -->
+        <div class="event-content" id="certificates-events">
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Drone Piloting Certificate">
+                    </div>
+                    <div class="event-details">
+                        <h4>Certificate in Drone Piloting</h4>
+                        <p>3-month program covering drone operation, regulations, and commercial applications.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> Starts July 1, 2023</span>
+                            <span><i class="fas fa-certificate"></i> DGCA Approved</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI for Business Certificate">
+                    </div>
+                    <div class="event-details">
+                        <h4>AI for Business Professionals</h4>
+                        <p>6-week certificate course on AI applications for non-technical business leaders.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> Starts June 15, 2023</span>
+                            <span><i class="fas fa-certificate"></i> Industry Recognized</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="IoT Fundamentals Certificate">
+                    </div>
+                    <div class="event-details">
+                        <h4>IoT Fundamentals</h4>
+                        <p>8-week hands-on course on Internet of Things concepts and implementation.</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar-alt"></i> Starts July 10, 2023</span>
+                            <span><i class="fas fa-certificate"></i> With Lab Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  </div>
+<div id="programs-page" class="page">
+    <section class="program-page">
+        <!-- Hero Section -->
+        <div class="program-hero" style="background: linear-gradient(135deg, rgba(64, 0, 0, 0.95) 0%, rgba(102, 0, 0, 0.95) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;">
+            <div class="container">
+                <h1 class="hero-title animate-fade-in">Transform Your Future with Our Specialized Programs</h1>
+                <p class="hero-subtitle animate-fade-in-delay">Choose from our industry-focused postgraduate diplomas and gain cutting-edge skills for tomorrow's job market</p>
+                <a href="#" class="btn btn-primary btn-pulse" data-page="admissions-page" style="background-color: #660000; border-color: #660000; color: #fff;">Apply Now</a>
+            </div>
+            <div class="hero-wave" style="background: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 1440 320&quot;><path fill=&quot;%23660000&quot; fill-opacity=&quot;1&quot; d=&quot;M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z&quot;/></svg>') no-repeat bottom center; background-size: cover;"></div>
+        </div>
+
+
+        <!-- Programs Grid -->
+        <!-- Precision Agriculture Department -->
+        <div class="department-section animate-slide-up">
+            <div class="department-header">
+                <div class="department-icon">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <h2>Precision Agriculture</h2>
+                <p>Innovative programs combining technology with modern agricultural practices</p>
+            </div>
+            
+            <div class="program-cards">
+               <!-- Precision Agriculture -->
+<div class="program-card" style="--card-color: #27ae60">
+    <div class="card-bg"></div>
+    <div class="program-img">
+        <img src="https://i.ibb.co/rKnCQ8HK/images-7.jpg" alt="Precision Agriculture">
+    </div>
+    <span class="program-code">PG33PA</span>
+    <h3>PG Diploma in Precision Agriculture</h3>
+    <div class="program-meta">
+        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+    </div>
+    <p>Master data-driven farming techniques using IoT, sensors, and AI for crop optimization.</p>
+    <div class="card-actions">
+        <a href="#" class="btn btn-outline">Details</a>
+        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+    </div>
+</div>
+                <!-- Agriculture Drones -->
+                <div class="program-card" style="--card-color: #2ecc71">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/DPfK12jW/download-32.jpg" alt="Agriculture Drones">
+                    </div>
+                    <span class="program-code">PG34AD</span>
+                    <h3>PG Diploma in Agriculture Drones</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Train in drone piloting, imaging, and data analysis for agricultural applications.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Hydroponics and Vertical Farming -->
+                <div class="program-card" style="--card-color: #1abc9c">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/F4rSCY3F/download-33.jpg" alt="Hydroponics">
+                    </div>
+                    <span class="program-code">PG35HV</span>
+                    <h3>PG Diploma in Hydroponics & Vertical Farming</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Learn sustainable farming techniques without soil in controlled environments.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Advanced Technologies in Agriculture -->
+                <div class="program-card" style="--card-color: #16a085">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/6cjHfN94/images-8.jpg" alt="Advanced Agriculture">
+                    </div>
+                    <span class="program-code">PG36AT</span>
+                    <h3>PG Diploma in Advanced Technologies in Agriculture</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Explore cutting-edge technologies transforming modern agriculture.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Agri Entrepreneurship -->
+                <div class="program-card" style="--card-color: #f39c12">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agri Entrepreneurship">
+                    </div>
+                    <span class="program-code">PG37AE</span>
+                    <h3>PG Diploma in Agri Entrepreneurship</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Develop business skills specific to agricultural ventures and startups.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI & Robotics Department -->
+        <div class="department-section animate-slide-up">
+            <div class="department-header">
+                <div class="department-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h2>AI & Robotics</h2>
+                <p>Specialized programs in artificial intelligence and robotic systems</p>
+            </div>
+            
+            <div class="program-cards">
+                <!-- AI & Robotics -->
+                <div class="program-card" style="--card-color: #3498db">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Robotics">
+                    </div>
+                    <span class="program-code">PG38AR</span>
+                    <h3>PG Diploma in AI & Robotics</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Comprehensive training in AI-driven robotic systems and automation.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Generative AI -->
+                <div class="program-card" style="--card-color: #9b59b6">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/hRcMxfGj/xyz.jpg" alt="xyz" alt="Generative AI">
+                    </div>
+                    <span class="program-code">PG39GA</span>
+                    <h3>PG Diploma in Generative AI</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Master the creation of AI models that generate text, images, and media.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Blockchain -->
+                <div class="program-card" style="--card-color: #34495e">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Blockchain">
+                    </div>
+                    <span class="program-code">PG40AB</span>
+                    <h3>PG Diploma in AI & Blockchain</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Explore the convergence of AI and decentralized blockchain technologies.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Data Analytics -->
+                <div class="program-card" style="--card-color: #e74c3c">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Data Analytics">
+                    </div>
+                    <span class="program-code">PG41AD</span>
+                    <h3>PG Diploma in AI & Data Analytics</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Apply AI techniques to extract insights from complex datasets.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Biological Sciences -->
+                <div class="program-card" style="--card-color: #1abc9c">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Biological Sciences">
+                    </div>
+                    <span class="program-code">PG42BS</span>
+                    <h3>PG Diploma in AI & Biological Sciences</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Apply AI to biological research, drug discovery, and genetic analysis.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Cybersecurity Systems -->
+                <div class="program-card" style="--card-color: #d35400">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Cybersecurity">
+                    </div>
+                    <span class="program-code">PG43AC</span>
+                    <h3>PG Diploma in AI & Cybersecurity Systems</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Develop AI-powered solutions for cybersecurity threats and vulnerabilities.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI & Business Department -->
+        <div class="department-section animate-slide-up">
+            <div class="department-header">
+                <div class="department-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2>AI & Business</h2>
+                <p>Programs at the intersection of artificial intelligence and business applications</p>
+            </div>
+            
+            <div class="program-cards">
+                <!-- AI & Business -->
+                <div class="program-card" style="--card-color: #2980b9">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Business">
+                    </div>
+                    <span class="program-code">PG44AB</span>
+                    <h3>PG Diploma in AI & Business</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Transform business operations with AI-driven strategies and solutions.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Management Studies -->
+                <div class="program-card" style="--card-color: #8e44ad">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Management">
+                    </div>
+                    <span class="program-code">PG45AM</span>
+                    <h3>PG Diploma in AI & Management Studies</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Apply AI to organizational leadership, decision-making, and strategy.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Law -->
+                <div class="program-card" style="--card-color: #c0392b">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Law">
+                    </div>
+                    <span class="program-code">PG46AL</span>
+                    <h3>PG Diploma in AI & Law</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Explore the legal implications and applications of artificial intelligence.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- IP Law -->
+                <div class="program-card" style="--card-color: #16a085">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="IP Law">
+                    </div>
+                    <span class="program-code">PG47IP</span>
+                    <h3>PG Diploma in IP Law</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Specialize in intellectual property law for technology and innovation.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Marketing -->
+                <div class="program-card" style="--card-color: #e84393">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Marketing">
+                    </div>
+                    <span class="program-code">PG48MK</span>
+                    <h3>PG Diploma in AI & Marketing</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Leverage AI for customer insights, personalization, and campaign optimization.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Healthcare & Life Sciences Department -->
+        <div class="department-section animate-slide-up">
+            <div class="department-header">
+                <div class="department-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h2>Healthcare & Life Sciences</h2>
+                <p>Programs at the intersection of technology and life sciences</p>
+            </div>
+            
+            <div class="program-cards">
+                <!-- Clinical Research & Regulatory Affairs -->
+                <div class="program-card" style="--card-color: #e74c3c">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Clinical Research">
+                    </div>
+                    <span class="program-code">PG49CR</span>
+                    <h3>PG Diploma in Clinical Research & Regulatory Affairs</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Gain expertise in clinical trials and pharmaceutical regulations.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Medical Coding -->
+                <div class="program-card" style="--card-color: #3498db">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medical Coding">
+                    </div>
+                    <span class="program-code">PG50MC</span>
+                    <h3>PG Diploma in Medical Coding</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Learn standardized coding systems for healthcare documentation.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Digital Forensics -->
+                <div class="program-card" style="--card-color: #2c3e50">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Digital Forensics">
+                    </div>
+                    <span class="program-code">PG51DF</span>
+                    <h3>PG Diploma in Digital Forensics</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Investigate cybercrimes and recover digital evidence.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Industrial Fermentation Technology -->
+                <div class="program-card" style="--card-color: #27ae60">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/qMh6CbSy/download-34.jpg" alt="Fermentation Technology">
+                    </div>
+                    <span class="program-code">PG52FT</span>
+                    <h3>PG Diploma in Industrial Fermentation Technology</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Master microbial processes for food, pharmaceuticals, and biofuels.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Vaccine Technology -->
+                <div class="program-card" style="--card-color: #f1c40f">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://i.ibb.co/Q3nNjSVK/download-35.jpg" alt="Vaccine Technology">
+                    </div>
+                    <span class="program-code">PG53VT</span>
+                    <h3>PG Diploma in Vaccine Technology</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Study vaccine development, production, and quality control.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Bioentrepreneurship -->
+                <div class="program-card" style="--card-color: #e67e22">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bioentrepreneurship">
+                    </div>
+                    <span class="program-code">PG54BE</span>
+                    <h3>PG Diploma in Bioentrepreneurship</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Develop business ventures in biotechnology and life sciences.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI & Creative Technologies Department -->
+        <div class="department-section animate-slide-up">
+            <div class="department-header">
+                <div class="department-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h2>AI & Creative Technologies</h2>
+                <p>Programs combining artificial intelligence with creative disciplines</p>
+            </div>
+            
+            <div class="program-cards">
+                <!-- AI & Designing Technology -->
+                <div class="program-card" style="--card-color: #9b59b6">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Design">
+                    </div>
+                    <span class="program-code">PG55AD</span>
+                    <h3>PG Diploma in AI & Designing Technology</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Apply AI to product, graphic, and UX/UI design processes.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+                
+                <!-- AI & Arts -->
+                <div class="program-card" style="--card-color: #e74c3c">
+                    <div class="card-bg"></div>
+                    <div class="program-img">
+                        <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Arts">
+                    </div>
+                    <span class="program-code">PG56AA</span>
+                    <h3>PG Diploma in AI & Arts</h3>
+                    <div class="program-meta">
+                        <span class="duration"><i class="fas fa-clock"></i> 12 Months</span>
+                    </div>
+                    <p>Explore the intersection of artificial intelligence and creative arts.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn btn-outline">Details</a>
+                        <a href="#" class="btn btn-apply" data-page="admissions-page">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="program-cta animate-fade-in">
+            <div class="container">
+                <h2>Ready to Transform Your Career?</h2>
+                <p>Our admissions team is ready to help you choose the perfect program for your goals.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-pulse" data-page="admissions-page">Apply Now</a>
+                    <a href="#" class="btn btn-outline-white" data-page="contact-page">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+   <!-- Departments Page -->
+<div id="departments-page" class="page">
+    <section class="departments-page">
+        <div class="departments-header">
+            <div class="container">
+                <h1 class="animate__animated animate__fadeInDown">Our Research Departments</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">Explore our specialized research departments that are pushing the boundaries of knowledge and innovation</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="department-grid">
+                <!-- 1. Artificial Intelligence and Machine Learning -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI & ML Department">
+                        <div class="department-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>AI & Machine Learning</h3>
+                        <p class="focus">Developing AI and ML algorithms, models, and applications for various industries.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Natural Language Processing</li>
+                                <li>Computer Vision</li>
+                                <li>Predictive Analytics</li>
+                                <li>Robotics</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 2. Cybersecurity and Information Assurance -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cybersecurity Department">
+                        <div class="department-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Cybersecurity</h3>
+                        <p class="focus">Investigating cybersecurity threats, vulnerabilities, and countermeasures.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Threat Intelligence</li>
+                                <li>Incident Response</li>
+                                <li>Cryptography</li>
+                                <li>Network Security</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 3. Data Science and Analytics -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Data Science Department">
+                        <div class="department-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Data Science & Analytics</h3>
+                        <p class="focus">Developing data-driven solutions for insights and decision-making.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Big Data Analytics</li>
+                                <li>Data Visualization</li>
+                                <li>Predictive Modeling</li>
+                                <li>Statistical Analysis</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 4. IoT and Edge Computing -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="IoT Department">
+                        <div class="department-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>IoT & Edge Computing</h3>
+                        <p class="focus">Designing and implementing IoT systems and edge computing architectures.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>IoT Security</li>
+                                <li>Edge AI</li>
+                                <li>Real-time Analytics</li>
+                                <li>Industrial Automation</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+              <!-- 5. Sustainable Energy and Environment -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sustainable Energy Department">
+                        <div class="department-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Sustainable Energy</h3>
+                        <p class="focus">Investigating sustainable energy solutions and climate change mitigation.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Renewable Energy</li>
+                                <li>Energy Storage</li>
+                                <li>Green Buildings</li>
+                                <li>Sustainable Infrastructure</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 6. Biotechnology and Healthcare -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Biotech Department">
+                        <div class="department-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Biotechnology & Healthcare</h3>
+                        <p class="focus">Developing innovative solutions for healthcare and medicine.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Personalized Medicine</li>
+                                <li>Regenerative Medicine</li>
+                                <li>Gene Editing</li>
+                                <li>Medical Imaging</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 7. Robotics and Autonomous Systems -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://i.ibb.co/chwCL7bK/AI-and-robotics.jpg" alt="Robotics Department">
+                        <div class="department-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Robotics & Autonomous Systems</h3>
+                        <p class="focus">Designing advanced robotic systems and autonomous vehicles.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Robotics</li>
+                                <li>Autonomous Systems</li>
+                                <li>Human-Robot Interaction</li>
+                                <li>Swarm Robotics</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 8. Advanced Materials and Manufacturing -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Materials Department">
+                        <div class="department-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Advanced Materials</h3>
+                        <p class="focus">Investigating novel materials and manufacturing processes.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>Nanomaterials</li>
+                                <li>Biomaterials</li>
+                                <li>3D Printing</li>
+                                <li>Advanced Manufacturing</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+                <!-- 9. Human-Computer Interaction -->
+                <div class="department-card animate__animated">
+                    <div class="department-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HCI Department">
+                        <div class="department-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    <div class="department-content">
+                        <h3>Human-Computer Interaction</h3>
+                        <p class="focus">Developing user-centered interfaces and experiences.</p>
+                        <div class="research-areas">
+                            <h4>Research Areas:</h4>
+                            <ul>
+                                <li>User Experience Design</li>
+                                <li>Human-Computer Interaction</li>
+                                <li>Accessibility</li>
+                                <li>Usability</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-outline">Explore Department</a>
+                    </div>
+                </div>
+
+               <!-- 10. Quantum Computing and Emerging Technologies -->
+<div class="department-card animate__animated">
+    <div class="department-img">
+        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Quantum Computing Department">
+        <div class="department-icon">
+            <i class="fas fa-atom"></i>
+        </div>
+    </div>
+    <div class="department-content">
+        <h3>Quantum Computing</h3>
+        <p class="focus">Exploring quantum computing and emerging technologies.</p>
+        <div class="research-areas">
+            <h4>Research Areas:</h4>
+            <ul>
+                <li>Quantum Algorithms</li>
+                <li>Quantum Applications</li>
+                <li>Blockchain</li>
+                <li>Distributed Ledger Tech</li>
+            </ul>
+        </div>
+        <a href="#" class="btn btn-outline">Explore Department</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+ 
+
+          
+   <!-- Faculty Page -->
+<div id="faculty-page" class="page">
+    <section class="faculty-page">
+        <div class="faculty-header">
+            <div class="container">
+                <h1>Our Distinguished Faculty</h1>
+                <p>Meet our accomplished faculty members who are experts in their fields and dedicated to student success</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="faculty-list">
+                <!-- Dr. Ipseeta Nanda first -->
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://i.ibb.co/tp3fgxV9/Screenshot-2025-05-16-012710.png" alt="Dr. Ipseeta Nanda">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr Ipseeta Nanda</h3>
+                        <p class="position">Director Dean IGT</p>
+                        <p class="bio">With 19 years of experience in teaching, research, and administration (Dean), Dr. Nanda has guided PhD students and participated in prestigious conferences as plenary speaker and guest of honor.
+
+She was honored with the IIWA-2020 award for Best Women Performer of the Year and accolades from South-Central Railway Women Union.
+
+Former Founder Dean of Faculty of IT at GNS University and Director of Curriculum Design at Innogurus, she specializes in IoT and has contributed as reviewer for Wiley IoT books.</p>
+                        <div class="faculty-social">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dr. Rahul Vadiseety second -->
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://i.ibb.co/M52WXqsF/Screenshot-2025-05-17-205413.png" alt="Dr. Rahul Vadiseety">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr Rahul Vadiseety</h3>
+                        <p class="position">Director AI</p>
+                        <p class="bio">Rahul Vadisetty is a passionate and dedicated AI researcher and technologist with over a decade of experience in AI, machine learning, cybersecurity, and cloud computing.
+
+His contributions extend to smart governance, IoT-based intrusion detection, and AI-driven healthcare diagnostics. His pioneering work in AI-Based Smart Governance has provided governments with AI-driven frameworks to enhance decision-making.
+
+His expertise includes developing machine learning algorithms for cybersecurity, deep learning, cloud computing, and AI-driven governance.</p>
+                        <div class="faculty-social">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dr. Rath Satyasambit third -->
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://i.ibb.co/fV9xBQV0/Screenshot-2025-05-15-214959.png" alt="Dr. Rath Satyasambit">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr. Rath Satyasambit</h3>
+                        <p class="position">Director Robotics</p>
+                        <p class="bio">Works with neural data from rat's brain using computational methods and dimensionality reduction techniques.
+
+Developed novel bRNN decoders for neural calcium signals during emotional memory tasks.
+
+Holds a PhD in Artificial Intelligence from Tokyo Institute of Technology and Master's in Cognitive Neuroscience from National Central University, Taiwan.</p>
+                        <div class="faculty-social">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dr. Harshichander fourth -->
+                <div class="faculty-card">
+                    <div class="faculty-img">
+                        <img src="https://i.ibb.co/7qz46NM/Screenshot-2025-05-15-185114.png" alt="Dr. Harshichander">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr Harshichander</h3>
+                        <p class="position">Director Biology</p>
+                        <p class="bio">Dr. Harishchander Anandaram is a Assistant Professor (Senior Grade), School of Artificial Intelligence, Coimbatore. He completed his PhD in Bioengineering (2020), M.Tech. in Bioinformatics (2011), and B.Tech. in Bioinformatics (2009) from the Sathyabama Institute of Science and Technology, Chennai. His research includes analyzing resistance in HIV protease inhibitors through molecular mechanics and machine learning, and exploring pharmacogenomics and miRNA-regulated networks in psoriasis in collaboration with prestigious institutions like IIT Madras, Georgetown University, JIPMER, CIBA, and ILS.</p>
+                        <div class="faculty-social">
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- Admissions Page -->
+<div id="admissions-page" class="page">
+    <section class="admissions">
+        <!-- Hero Banner -->
+        <div class="admissions-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Begin Your Academic Journey</h1>
+                    <p class="lead">Join our community of innovators and thought leaders</p>
+                    <a href="#" class="btn btn-primary btn-lg">Start Your Application</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Process Section -->
+            <div class="section-title">
+                <span class="section-subtitle">How to Apply</span>
+                <h2>Admissions Process</h2>
+                <p class="section-description">Our streamlined admission process makes it easy to join our academic community</p>
+            </div>
+            
+            <div class="admission-steps">
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 8v12.993A1 1 0 0 1 20.007 22H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8zm-2 1h-5V4H5v16h14V9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Application</h3>
+                    <p>Submit your online application along with required documents through our portal.</p>
+                    <a href="#" class="btn btn-outline-primary">Apply Now <span>&rarr;</span></a>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 6a8 8 0 0 1 7.996 7.75L20 14v6h-6a8 8 0 0 1-7.995-7.75L6 14v-6h6zm0-4a8 8 0 0 1 7.996 7.75L20 10v1h-1a7 7 0 0 0-6.996-6.76L12 4a7 7 0 0 0-6.996 6.76L5 11v-1a8 8 0 0 1 7.996-7.75L12 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Review</h3>
+                    <p>Our admissions committee will carefully evaluate your application and credentials.</p>
+                    <a href="#" class="btn btn-outline-primary">Learn More <span>&rarr;</span></a>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm4 4a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1zm-8 0a1 1 0 0 0-1 1v6a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Interview</h3>
+                    <p>Selected candidates will be invited for an interview (in-person or virtual).</p>
+                    <a href="#" class="btn btn-outline-primary">Prepare <span>&rarr;</span></a>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3v8h2V7h-2zm0 10v2h2v-2h-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3>Decision</h3>
+                    <p>Receive your admission decision within 2-4 weeks of your interview.</p>
+                    <a href="#" class="btn btn-outline-primary">Timeline <span>&rarr;</span></a>
+                </div>
+            </div>
+            
+            <!-- Details Section -->
+            <div class="section-title">
+                <span class="section-subtitle">Everything You Need</span>
+                <h2>Admission Details</h2>
+                <p class="section-description">Key information to help you prepare your application</p>
+            </div>
+            
+            <div class="admission-details">
+                <div class="detail-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3v8h2V7h-2zm0 10v2h2v-2h-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Application Requirements</h3>
+                    </div>
+                    <ul class="styled-list">
+                        <li><span class="list-icon">✓</span> Completed online application form</li>
+                        <li><span class="list-icon">✓</span> Bachelor's degree in relevant field with minimum 50% marks</li>
+                        <li><span class="list-icon">✓</span> Statement of purpose (500-1000 words)</li>
+                        <li><span class="list-icon">✓</span> Two letters of recommendation</li>
+                        <li><span class="list-icon">✓</span> Professional resume/CV</li>
+                        <li><span class="list-icon">✓</span> Application fee (waivers available)</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-secondary">Download Checklist</a>
+                    </div>
+                </div>
+                
+                <div class="detail-card highlight-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"/>
+                            </svg>
+                        </div>
+                        <h3>Important Dates</h3>
+                    </div>
+                    <ul class="styled-list">
+                        <li><span class="date-badge">Jul 15</span> Fall Semester Deadline</li>
+                        <li><span class="date-badge">Nov 15</span> Spring Semester Deadline</li>
+                        <li><span class="date-badge">Apr 15</span> Summer Semester Deadline</li>
+                        <li><span class="date-badge">Dec 1</span> Early Decision Deadline</li>
+                        <li><span class="date-badge">Aug 20-25</span> Orientation Week</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Add to Calendar</a>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v12h14V6H5zm3 3h8v2H8V9zm0 4h8v2H8v-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Tuition & Financial Aid</h3>
+                    </div>
+                    <ul class="styled-list">
+                        <li><span class="list-icon">₹</span> Tuition: ₹1,50,000 per semester</li>
+                        <li><span class="list-icon">★</span> Merit-based scholarships available</li>
+                        <li><span class="list-icon">🔍</span> Research and teaching assistantships</li>
+                        <li><span class="list-icon">🏦</span> Education loan partnerships</li>
+                        <li><span class="list-icon">⏳</span> Flexible payment plans</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-secondary">Financial Aid Information</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="admission-cta">
+                <div class="cta-content">
+                    <h2>Ready to take the next step?</h2>
+                    <p>Our admissions team is here to help you through every step of the process.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary btn-lg">Contact Admissions</a>
+                        <a href="#" class="btn btn-outline-white btn-lg">Schedule Campus Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="page">
+        <section class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with our admissions team or visit our campus to learn more</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>We'd Love to Hear From You</h3>
+                        <p>Whether you have questions about admissions, programs, or campus life, our team is here to help. Reach out to us through any of the channels below.</p>
+                        <div class="contact-details">
+                           
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>admissions@igt.edu.in</p>
+                                  <h1> A UNIT OF BRC </h1>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Institute of Global Technology</h3>
+                    <p>Institute of Global Technology is committed to academic excellence, innovation, and the holistic development of students to become leaders in technology fields.
+                  Acreeditiated by AIAB Europe</p>
+                    <div class="contact-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="nav-link" data-page="home-page">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="programs-page">Academic Programs</a></li>
+                        <li><a href="#" class="nav-link" data-page="departments-page">Research Departments</a></li>
+                        <li><a href="#" class="nav-link" data-page="faculty-page">Faculty</a></li>
+                        <li><a href="#" class="nav-link" data-page="admissions-page">Admissions</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact-page">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Academic</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Robotics Programs</a></li>
+                        <li><a href="#">AI & ML Programs</a></li>
+                        <li><a href="#">Drone Technology</a></li>
+                        <li><a href="#">Precision Agriculture</a></li>
+                        <li><a href="#">Research Opportunities</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on events, admissions, and institute news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Institute of Global Technology. All Rights Reserved. | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = menu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('#menu li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Page Navigation System
+        const pages = document.querySelectorAll('.page');
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active nav link
+            navLinksAll.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Add click event to all nav links
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(link.dataset.page);
+            });
+        });
+        
+        // Course Tabs
+        const courseTabs = document.querySelectorAll('.course-tab');
+        const courseContents = document.querySelectorAll('.course-content');
+        
+        courseTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                courseTabs.forEach(t => t.classList.remove('active'));
+                courseContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-courses').classList.add('active');
+            });
+        });
+        
+        // Project Tabs
+        const projectTabs = document.querySelectorAll('.project-tab');
+        const projectContents = document.querySelectorAll('.project-content');
+        
+        projectTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                projectTabs.forEach(t => t.classList.remove('active'));
+                projectContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-projects').classList.add('active');
+            });
+        });
+        
+        // Event Tabs
+        const eventTabs = document.querySelectorAll('.event-tab');
+        const eventContents = document.querySelectorAll('.event-content');
+        
+        eventTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                eventTabs.forEach(t => t.classList.remove('active'));
+                eventContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-events').classList.add('active');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show an alert
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+          
+          // Tab functionality
+    document.querySelectorAll('.course-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+            
+            // Hide all content
+            document.querySelectorAll('.course-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show selected content
+            const tabId = tab.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+        }
+        
+        // Initialize the page (show home page by default)
+        showPage('home-page');
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
