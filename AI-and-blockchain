@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Program in AI & Blockchain</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ede7f6);
+      color: #333;
+    }
+    header {
+      background: #006064;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    section {
+      padding: 40px 10%;
+    }
+    h2 {
+      color: #004d40;
+      border-left: 5px solid #4db6ac;
+      padding-left: 12px;
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #b2dfdb;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #00838f;
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #004d40;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #002f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Master Program in AI & Blockchain</h1>
+  </header>
+
+  <section>
+    <h2>🧠 Introduction</h2>
+    <p>
+      The Master Program in AI & Blockchain combines the two most transformative technologies of the 21st century. This interdisciplinary program focuses on building intelligent systems that are secure, transparent, decentralized, and data-driven. Students learn how AI algorithms and blockchain protocols can work together to revolutionize industries like finance, healthcare, agriculture, logistics, and identity management.
+    </p>
+
+    <h2>💼 Career Opportunities</h2>
+    <ul>
+      <li>AI Blockchain Developer</li>
+      <li>Smart Contract Engineer</li>
+      <li>AI Security & Compliance Analyst</li>
+      <li>Blockchain Data Scientist</li>
+      <li>Cryptographic Researcher</li>
+      <li>DeFi/FinTech Product Developer</li>
+      <li>AI-Powered Web3 Entrepreneur</li>
+    </ul>
+
+    <h2>🎯 Key Areas of Study</h2>
+    <ul>
+      <li>Artificial Intelligence (ML, DL, NLP)</li>
+      <li>Blockchain Protocols & Smart Contracts</li>
+      <li>Decentralized AI Systems</li>
+      <li>Cryptography and Security</li>
+      <li>AI for Fraud Detection & Identity Verification</li>
+      <li>Tokenization, NFTs, and Digital Assets</li>
+      <li>AI in Web3, Metaverse, and DeFi Applications</li>
+    </ul>
+
+    <h2>📘 Semester-wise Syllabus</h2>
+
+    <h3>Semester 1: Foundations of AI & Blockchain</h3>
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Subtopics</th>
+      </tr>
+      <tr>
+        <td>Fundamentals of Machine Learning</td>
+        <td>Supervised, unsupervised learning, algorithms, model evaluation</td>
+      </tr>
+      <tr>
+        <td>Blockchain Architecture & Cryptography</td>
+        <td>Hashing, Merkle trees, consensus mechanisms, mining</td>
+      </tr>
+      <tr>
+        <td>Python for AI & Smart Contracts</td>
+        <td>Python, Solidity, Remix, Web3.js basics</td>
+      </tr>
+      <tr>
+        <td>Smart Contracts & Ethereum</td>
+        <td>Deploying contracts, gas, tokens, DApps</td>
+      </tr>
+      <tr>
+        <td>Lab I – ML Model + Smart Contract Integration</td>
+        <td>AI-based voting system with Ethereum blockchain</td>
+      </tr>
+    </table>
+
+    <h3>Semester 2: Advanced Integration & Applications</h3>
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Subtopics</th>
+      </tr>
+      <tr>
+        <td>Decentralized AI Systems</td>
+        <td>Swarm intelligence, federated learning, distributed AI</td>
+      </tr>
+      <tr>
+        <td>AI for Blockchain Security & Fraud Detection</td>
+        <td>Anomaly detection, smart contract auditing, scam detection</td>
+      </tr>
+      <tr>
+        <td>Web3, DeFi & Metaverse Applications</td>
+        <td>NFTs, stablecoins, DAOs, immersive AI interfaces</td>
+      </tr>
+      <tr>
+        <td>Ethics, Privacy & Responsible AI</td>
+        <td>GDPR, AI ethics, data sovereignty in blockchain</td>
+      </tr>
+      <tr>
+        <td>Capstone Project</td>
+        <td>Build an AI-powered decentralized application with live demo</td>
+      </tr>
+    </table>
+
+    <a href="https://github.com/BRPUBLICATION/IGT_FINAL/blob/main/AI%20and%20Blockchain.html" class="btn" target="_blank">View Full Curriculum</a>
+
+  </section>
+
+</body>
+</html>
