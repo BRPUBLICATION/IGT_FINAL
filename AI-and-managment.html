@@ -38,6 +38,8 @@
     h2 {
       color: #0e3a5e;
       margin-top: 30px;
+      border-bottom: 2px solid #0e3a5e;
+      padding-bottom: 5px;
     }
     ul {
       padding-left: 20px;
@@ -89,6 +91,40 @@
       font-size: 14px;
       color: #777;
     }
+    .experts {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .expert-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #ffe8d6;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .expert-card img {
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+    }
+    .expert-card h3 {
+      margin: 0;
+      color: #6b2b06;
+    }
+    .section-label {
+      display: inline-block;
+      background: #fff;
+      color: #0e3a5e;
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 2px solid #0e3a5e;
+    }
   </style>
 </head>
 <body>
@@ -99,48 +135,100 @@
 </header>
 
 <div class="container">
-  <h2>Program Duration</h2>
+
+  <span class="section-label">Program Duration</span>
   <p><strong>Dates:</strong> 1st Sep – 30th Sep 2025<br>
-     <strong>Timing:</strong> 6:00 PM – 7:00 PM IST (Live Classes + Recordings)</p>
+  <strong>Time:</strong> 6:00 PM – 7:00 PM IST (Live + Recordings)</p>
 
   <h2>Course Modules</h2>
-
   <div class="module"><strong>Module 11:</strong> Developing AI Strategies<br>• AI strategy development<br>• Alignment with business goals</div>
-  <div class="module"><strong>Module 12:</strong> AI Governance Frameworks<br>• AI compliance and control</div>
-  <div class="module"><strong>Module 13:</strong> AI Ethics and Governance<br>• Principles and importance in AI deployment</div>
-  <div class="module"><strong>Module 14:</strong> AI Risk Management<br>• Risk assessment and mitigation</div>
-  <div class="module"><strong>Module 15:</strong> AI Strategy & Governance Case Studies</div>
-  <div class="module"><strong>Module 16:</strong> Implementing AI Solutions<br>• Design and deployment of AI systems</div>
-  <div class="module"><strong>Module 17:</strong> Managing AI Projects<br>• Project planning and execution</div>
-  <div class="module"><strong>Module 18:</strong> AI Adoption & Change Management<br>• Organizational transformation</div>
-  <div class="module"><strong>Module 19:</strong> AI Talent Development & Acquisition</div>
+  <div class="module"><strong>Module 12:</strong> AI Governance Frameworks<br>• Overview of governance<br>• AI compliance importance</div>
+  <div class="module"><strong>Module 13:</strong> AI Ethics and Governance<br>• Ethics principles<br>• Responsible AI deployment</div>
+  <div class="module"><strong>Module 14:</strong> AI Risk Management<br>• Risk analysis<br>• Mitigation planning</div>
+  <div class="module"><strong>Module 15:</strong> Strategy & Governance Case Studies</div>
+  <div class="module"><strong>Module 16:</strong> Implementing AI Solutions<br>• Solution design<br>• Development workflows</div>
+  <div class="module"><strong>Module 17:</strong> Managing AI Projects<br>• Planning<br>• Execution strategies</div>
+  <div class="module"><strong>Module 18:</strong> AI Adoption & Change Management<br>• Change processes<br>• Organizational adaptation</div>
+  <div class="module"><strong>Module 19:</strong> Talent Development & Acquisition</div>
   <div class="module"><strong>Module 20:</strong> Capstone Project Presentations</div>
 
-  <h2>Why Join?</h2>
+  <h2>Program Objectives</h2>
+  <ul>
+    <li><strong>AI for Business:</strong> Transform with modern tools and strategies.</li>
+    <li><strong>Deep Tech Foundation:</strong> Learn ML, DL, NLP, tools like TensorFlow.</li>
+    <li><strong>Strategic Management:</strong> Lead and manage AI teams.</li>
+    <li><strong>Critical Thinking:</strong> Solve real business problems with AI.</li>
+  </ul>
+
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Hands-on with AI tools and platforms</li>
+    <li>Master AI Strategy, Governance & Risk</li>
+    <li>Build and lead AI-driven teams</li>
+    <li>Capstone Project with Expert Mentorship</li>
+  </ul>
+
+  <h2>Course Outcomes</h2>
+  <ul>
+    <li>Apply AI in real-world business contexts</li>
+    <li>Strategically manage and scale AI projects</li>
+    <li>Understand ethics and compliance for AI</li>
+    <li>Extract business value from data with AI tools</li>
+  </ul>
+
+  <h2>Meet Your Experts</h2>
+  <div class="experts">
+    <div class="expert-card">
+      <img src="https://i.ibb.co/zNsXGys/rahul.png" alt="Dr Rahul V">
+      <div>
+        <h3>Dr Rahul Vadisetty</h3>
+        <p>Sr Software Engineer, US BANK (USA). Specialist in AI Smart Governance with 10+ years experience.</p>
+      </div>
+    </div>
+    <div class="expert-card">
+      <img src="https://i.ibb.co/NV8fdXy/rath.png" alt="Dr Rath">
+      <div>
+        <h3>Dr RATH Satyasambit</h3>
+        <p>Research Technician, RIKEN (Japan). PhD in AI, experienced in ML, automation & robotics.</p>
+      </div>
+    </div>
+    <div class="expert-card">
+      <img src="https://i.ibb.co/SBKkpVR/naeem.png" alt="Prof Naeema Nazar">
+      <div>
+        <h3>Prof. Naeema Nazar</h3>
+        <p>IEEE Counselor, VISAT Eng. College. Global strategy & AI educator, photonics specialist.</p>
+      </div>
+    </div>
+    <div class="expert-card">
+      <img src="https://i.ibb.co/jMJpg4Y/mohit.png" alt="Dr Mohit">
+      <div>
+        <h3>Dr Mohit Tiwari</h3>
+        <p>BVP Engineering, Delhi. Expert in AI curriculum development, predictive modeling, & pedagogy.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Program Highlights</h2>
   <div class="highlight">
     <ul>
-      <li>Live Classes + Recordings</li>
-      <li>Flexible Learning Hours</li>
-      <li>24/7 Study Material Access</li>
-      <li>Resume Building & Mentoring Support</li>
-      <li>Industry Exposure + Internships</li>
-      <li>Hands-on Projects & Publication Assistance</li>
-      <li>Certificate on Completion</li>
+      <li>EU ACC Certificate on Completion</li>
+      <li>Live Classes + Flexible Timings + Recordings</li>
+      <li>Mentoring + Resume Building + 24/7 Study Access</li>
+      <li>Industry Internships + Publication Support</li>
     </ul>
   </div>
 
   <h2>Fees & Offer</h2>
-  <p class="price">💥 Special Launch Price: INR 2,999 (Till 20th July 2025)<br>
-     <strong>Registration Fee:</strong> INR 4,599</p>
-
-  <a href="https://forms.gle/twTfeDk2HnKkQasE7" class="btn">Apply Now</a>
+  <p class="price">💥 INR 2,999 (Launch Offer Till 20th July 2025)<br>
+  <strong>Registration Fee:</strong> INR <del>4,599</del></p>
+  <a href="https://forms.gle/twTfeDk2HnKkQasE7" class="btn" target="_blank">Apply Now</a>
 
   <h2>Who Should Enroll?</h2>
   <ul>
-    <li>Business Leaders and Managers</li>
-    <li>AI & Data Science Professionals</li>
-    <li>Startup Founders and Entrepreneurs</li>
-    <li>Professionals transitioning to AI roles</li>
+    <li>Business Leaders & Managers</li>
+    <li>AI and Data Science Professionals</li>
+    <li>Entrepreneurs and Startups</li>
+    <li>Professionals transitioning into AI roles</li>
   </ul>
 
   <div class="contact">
@@ -148,8 +236,9 @@
     <p><i class="fas fa-phone"></i> +91 88673 94159</p>
     <p><i class="fas fa-envelope"></i> info@igteu.in</p>
     <p><i class="fas fa-globe"></i> <a href="https://www.igteu.in" target="_blank">www.igteu.in</a></p>
-    <p>💬 For bulk registrations and discounts, contact us directly!</p>
+    <p>💬 For bulk discounts & queries: <strong><a href="https://forms.gle/twTfeDk2HnKkQasE7" target="_blank">Register Here</a></strong></p>
   </div>
+
 </div>
 
 <div class="footer">
