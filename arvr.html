@@ -3,40 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <title>Master Program in AR/VR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #333;
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #2c3e50;
       line-height: 1.6;
     }
+
     header, section, footer {
-      padding: 20px;
-      margin: 10px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 25px;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
+
     h1, h2, h3 {
-      color: #2a2a2a;
+      color: #1a1a1a;
     }
+
     ul {
       padding-left: 20px;
     }
+
     .highlight {
       color: #e91e63;
       font-weight: bold;
     }
+
     .contact {
-      background: #fef9c3;
+      background: #fff3cd;
     }
+
     .fee {
-      background: #e0f7fa;
+      background: #d0f0f6;
     }
+
     .organisers {
-      background: #ede7f6;
+      background: #f3e5f5;
+    }
+
+    a.button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px auto;
+      display: block;
+      width: max-content;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #0056b3;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #007bff;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -44,63 +84,67 @@
 
   <header>
     <h1>Master Program in AR/VR</h1>
-    <p><strong>Organised by:</strong> <br> <span class="highlight">Aviana HV Bioscience Pvt Ltd</span>, in association with <span class="highlight">INSTITUTE OF GLOBAL TECHNOLOGY</span> and <span class="highlight">Intrino Robotics & Technologies Pvt Ltd</span></p>
+    <p><strong>Organised by:</strong> <br>
+      <span class="highlight">Aviana HV Bioscience Pvt Ltd</span> in collaboration with
+      <span class="highlight">INSTITUTE OF GLOBAL TECHNOLOGY</span> and
+      <span class="highlight">Intrino Robotics & Technologies Pvt Ltd</span>
+    </p>
   </header>
 
   <section>
-    <h2>Expert Faculty</h2>
+    <h2><i class="fas fa-chalkboard-teacher icon"></i> Expert Faculty</h2>
     <ul>
-      <li><strong>Mr. Manas Khare</strong> – AR/VR Engineer, Google Inc.<br>Expert in VR headsets, 3D modeling, spatial audio, and advanced video streaming.</li>
+      <li><strong>Mr. Manas Khare</strong> – AR/VR Engineer, Google Inc.</li>
       <li><strong>Mr. Sridhar</strong> – Founder & CEO, XR Developer, Intrino Robotics & Technologies Pvt Ltd.</li>
       <li><strong>Mr. Stalin Mani</strong> – Principal XR Architect, Intrino Technologies.</li>
-      <li><strong>Mr. Premkumar</strong> – Ex-Senior Specialist AR/VR/MR at Ford with 10+ years of experience.</li>
+      <li><strong>Mr. Premkumar</strong> – Former Senior AR/VR/MR Specialist at Ford.</li>
       <li><strong>Dr. Meena Kannan</strong> – Senior XR Developer, Intrino Technologies.</li>
-      <li><strong>Mr. Balaji</strong> – AR/VR Developer & Assistant Professor at KCT, XR Developer at Intrino Technologies.</li>
+      <li><strong>Mr. Balaji</strong> – AR/VR Developer, Asst. Professor at KCT.</li>
       <li><strong>Mr. Alekh Johari</strong> – AI Solutions Architect for AR/VR.</li>
       <li><strong>Dr. Mangal Raj</strong> – PDF, IIT Bombay.</li>
-      <li><strong>Dr. Veera Talukdar</strong> – Founder, Anemoi Solution. Expert in Extended Reality. PhD from IIIT.</li>
+      <li><strong>Dr. Veera Talukdar</strong> – Founder, Anemoi Solution, XR Expert, PhD from IIIT.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Program Curriculum</h2>
+    <h2><i class="fas fa-book icon"></i> Program Curriculum</h2>
     <h3>Semester 1: Foundations of AR/VR</h3>
     <ul>
-      <li><strong>Introduction to AR/VR (4 credits):</strong> Overview, history, trends, and applications.</li>
-      <li><strong>3D Modeling and Animation (4 credits):</strong> Blender, animation principles.</li>
-      <li><strong>Programming for AR/VR (4 credits):</strong> C#, Java, Python, Unity, Unreal Engine.</li>
-      <li><strong>User Experience Design (4 credits):</strong> UX principles, human-centered design.</li>
-      <li><strong>AR/VR Development Fundamentals (4 credits):</strong> Hardware understanding, immersive experience design.</li>
+      <li><strong>Introduction to AR/VR:</strong> History, trends, applications. (4 credits)</li>
+      <li><strong>3D Modeling & Animation:</strong> Blender, animation principles. (4 credits)</li>
+      <li><strong>Programming for AR/VR:</strong> C#, Java, Python, Unity, Unreal Engine. (4 credits)</li>
+      <li><strong>User Experience Design:</strong> UX principles & tools. (4 credits)</li>
+      <li><strong>AR/VR Development Fundamentals:</strong> Hardware, immersive design. (4 credits)</li>
     </ul>
 
     <h3>Semester 2: Advanced AR/VR Development</h3>
     <ul>
-      <li><strong>Advanced AR/VR Development (4 credits):</strong> AI/ML integration, performance optimization.</li>
-      <li><strong>Project Management and Teamwork (4 credits):</strong> Agile, team collaboration.</li>
-      <li><strong>Specialized AR/VR Topics (4 credits):</strong> Healthcare, education, emerging trends.</li>
-      <li><strong>Capstone Project (8 credits):</strong> Portfolio development, real-world application.</li>
-      <li><strong>Internship and Industry Exposure (4 credits):</strong> Hands-on development, industry networking.</li>
+      <li><strong>Advanced AR/VR Techniques:</strong> AI/ML integration. (4 credits)</li>
+      <li><strong>Project Management & Teamwork:</strong> Agile, collaboration. (4 credits)</li>
+      <li><strong>Specialized Topics:</strong> AR/VR in healthcare, education. (4 credits)</li>
+      <li><strong>Capstone Project:</strong> Portfolio-based development. (8 credits)</li>
+      <li><strong>Internship & Industry Exposure:</strong> Hands-on AR/VR training. (4 credits)</li>
     </ul>
   </section>
 
   <section class="fee">
-    <h2>Program Fee</h2>
+    <h2><i class="fas fa-money-bill-wave icon"></i> Program Fee</h2>
     <ul>
-      <li><strong>Total Program Fee:</strong> Rs. 1,24,999</li>
-      <li><strong>Early Bird Admission Fee:</strong> Rs. 89,999 (till August 15th, 2025)</li>
+      <li><strong>Total Fee:</strong> Rs. 1,24,999</li>
+      <li><strong>Early Bird Admission Fee:</strong> Rs. 89,999 <span style="color:#d32f2f;">(Till August 15th, 2025)</span></li>
       <li><strong>EMI Options:</strong> Available</li>
     </ul>
   </section>
 
   <section class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> +91 88673 94159</p>
-    <p><strong>Email:</strong> <a href="mailto:info@igteu.in">info@igteu.in</a></p>
-    <p><strong>Scan & Register:</strong> Admission open now</p>
+    <h2><i class="fas fa-phone icon"></i> Contact Us</h2>
+    <p><strong><i class="fas fa-phone-alt"></i> Phone:</strong> +91 88673 94159</p>
+    <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:info@igteu.in">info@igteu.in</a></p>
+    <p><strong><i class="fas fa-qrcode"></i> Scan & Register:</strong> Admission open now</p>
   </section>
 
   <footer class="organisers">
-    <p><strong>Organised by:</strong></p>
+    <h2><i class="fas fa-users icon"></i> Organisers</h2>
     <ul>
       <li>INSTITUTE OF GLOBAL TECHNOLOGY</li>
       <li>Intrino Robotics & Technologies Pvt Ltd</li>
@@ -108,11 +152,11 @@
     </ul>
   </footer>
 
-  <a href="https://forms.zohopublic.in/instituteofglobaltechnology1/form/MASTERPROGRAMADMISSIONFORM/formperma/WCGLkkYQzlxH7qsqnOVtsZupCg4Yo5MbReRCc75Mjlc" target="_blank">
-        <button style="padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-          Apply Now
-        </button>
-      </a>
+  <div style="text-align: center;">
+    <a class="button" href="https://forms.zohopublic.in/instituteofglobaltechnology1/form/MASTERPROGRAMADMISSIONFORM/formperma/WCGLkkYQzlxH7qsqnOVtsZupCg4Yo5MbReRCc75Mjlc" target="_blank">
+      <i class="fas fa-file-alt"></i> Apply Now
+    </a>
+  </div>
 
 </body>
 </html>
