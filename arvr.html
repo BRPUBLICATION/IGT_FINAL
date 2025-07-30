@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Program in AR/VR | Aviana HV Bioscience</title>
+    <title>Master Program in AR/VR </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -257,6 +257,76 @@
             left: 0;
         }
         
+        .detailed-module {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .detailed-module h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .module-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .module-topics, .module-outcomes {
+            background: #f9f9ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .module-topics h4, .module-outcomes h4 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-topics h4 i, .module-outcomes h4 i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .module-topics ul, .module-outcomes ul {
+            list-style-type: none;
+        }
+        
+        .module-topics li, .module-outcomes li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .module-topics li::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+        
+        .module-outcomes li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        
         .career-paths {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -344,6 +414,72 @@
             margin-bottom: 10px;
         }
         
+        .speakers {
+            background-color: var(--light);
+        }
+        
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .speaker-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .speaker-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .speaker-info {
+            padding: 25px;
+        }
+        
+        .speaker-info h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+        
+        .speaker-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .speaker-bio {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .speaker-expertise {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .expertise-tag {
+            background: #f0f0ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
         footer {
             background-color: var(--dark);
             color: white;
@@ -386,6 +522,10 @@
             .highlight-item .number {
                 font-size: 1.5rem;
             }
+            
+            .module-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -394,7 +534,7 @@
         <div class="container">
             <div class="logo">
                 <i class="fas fa-vr-cardboard"></i>
-                <span>AVIANA HV BIOSCIENCE</span>
+               
             </div>
             <h1>Master Program in AR/VR</h1>
             <p class="tagline">Learn from experts of Google, IITs and top industries</p>
@@ -469,54 +609,261 @@
         </div>
     </section>
     
-    <section class="curriculum">
+    <section class="detailed-curriculum">
         <div class="container">
-            <h2>Curriculum</h2>
-            <p class="program-description">Our comprehensive curriculum covers all aspects of AR/VR development to prepare you for a successful career in this exciting field.</p>
+            <h2>Detailed Curriculum</h2>
+            <p class="program-description">Our comprehensive curriculum covers all aspects of AR/VR development through 6 core modules with hands-on projects.</p>
             
-            <div class="module">
-                <h3><i class="fas fa-cube"></i> AR/VR Development</h3>
-                <ul>
-                    <li>Design and develop immersive AR/VR experiences</li>
-                    <li>Understand AR/VR hardware and physical structure</li>
-                    <li>Create interactive environments and applications</li>
-                </ul>
+            <div class="detailed-module">
+                <h3>Module 1: Foundations of AR/VR Technology</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>Introduction to Extended Reality (XR) technologies</li>
+                            <li>AR/VR hardware overview (HMDs, controllers, tracking systems)</li>
+                            <li>Spatial computing fundamentals</li>
+                            <li>User interaction paradigms in immersive environments</li>
+                            <li>Current industry trends and applications</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Understand the AR/VR technology stack</li>
+                            <li>Differentiate between various hardware platforms</li>
+                            <li>Comprehend spatial computing concepts</li>
+                            <li>Analyze use cases across industries</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="module">
-                <h3><i class="fas fa-cubes"></i> 3D Modeling and Animation</h3>
-                <ul>
-                    <li>Master industry-standard 3D software</li>
-                    <li>Learn advanced modeling techniques</li>
-                    <li>Create realistic animations for virtual environments</li>
-                </ul>
+            <div class="detailed-module">
+                <h3>Module 2: 3D Modeling for Virtual Environments</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>Blender fundamentals for AR/VR</li>
+                            <li>Polygonal modeling techniques</li>
+                            <li>UV unwrapping and texture mapping</li>
+                            <li>Optimization for real-time rendering</li>
+                            <li>PBR (Physically Based Rendering) materials</li>
+                            <li>Asset pipeline for game engines</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Create optimized 3D models for real-time applications</li>
+                            <li>Develop professional texturing skills</li>
+                            <li>Understand asset optimization techniques</li>
+                            <li>Export assets to game engines</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="module">
-                <h3><i class="fas fa-user-circle"></i> User Experience Design</h3>
-                <ul>
-                    <li>Create intuitive and engaging user experiences</li>
-                    <li>Understand UX principles for immersive technologies</li>
-                    <li>Design effective user interfaces for AR/VR</li>
-                </ul>
+            <div class="detailed-module">
+                <h3>Module 3: AR Development with Unity</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>Unity AR Foundation framework</li>
+                            <li>Marker-based and markerless AR</li>
+                            <li>Plane detection and object placement</li>
+                            <li>Image and object recognition</li>
+                            <li>ARCore and ARKit capabilities</li>
+                            <li>Multi-user AR experiences</li>
+                            <li>Performance optimization for mobile AR</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Develop cross-platform AR applications</li>
+                            <li>Implement advanced AR features</li>
+                            <li>Optimize AR apps for mobile devices</li>
+                            <li>Create shared AR experiences</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="module">
-                <h3><i class="fas fa-code"></i> Programming</h3>
-                <ul>
-                    <li>Gain skills in programming languages for AR/VR</li>
-                    <li>Master game engines like Unity and Unreal</li>
-                    <li>Develop interactive functionality</li>
-                </ul>
+            <div class="detailed-module">
+                <h3>Module 4: VR Development with Unreal Engine</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>Unreal Engine Blueprints visual scripting</li>
+                            <li>VR locomotion techniques</li>
+                            <li>Hand tracking and controller input</li>
+                            <li>Physics interactions in VR</li>
+                            <li>Optimizing for PC and standalone VR</li>
+                            <li>Multiplayer VR networking</li>
+                            <li>VR performance profiling</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Build immersive VR experiences</li>
+                            <li>Implement comfortable VR locomotion</li>
+                            <li>Create interactive VR environments</li>
+                            <li>Optimize VR applications</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
-            <div class="module">
-                <h3><i class="fas fa-tasks"></i> Project Management</h3>
-                <ul>
-                    <li>Plan and execute AR/VR projects</li>
-                    <li>Work effectively in teams</li>
-                    <li>Manage timelines and deliverables</li>
-                </ul>
+            <div class="detailed-module">
+                <h3>Module 5: UX Design for Immersive Technologies</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>UX principles for XR</li>
+                            <li>3D UI design patterns</li>
+                            <li>Comfort considerations in VR</li>
+                            <li>Spatial audio design</li>
+                            <li>User testing for AR/VR</li>
+                            <li>Accessibility in immersive experiences</li>
+                            <li>Information architecture for 3D spaces</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Design intuitive XR interfaces</li>
+                            <li>Create comfortable VR experiences</li>
+                            <li>Implement effective 3D UIs</li>
+                            <li>Conduct user tests for AR/VR</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="detailed-module">
+                <h3>Module 6: Advanced Topics & Capstone Project</h3>
+                <div class="module-content">
+                    <div class="module-topics">
+                        <h4><i class="fas fa-book-open"></i> Topics Covered</h4>
+                        <ul>
+                            <li>Mixed Reality development</li>
+                            <li>WebXR for browser-based XR</li>
+                            <li>AI integration in AR/VR</li>
+                            <li>Haptic feedback systems</li>
+                            <li>Enterprise AR/VR solutions</li>
+                            <li>Project planning and management</li>
+                            <li>Capstone project development</li>
+                        </ul>
+                    </div>
+                    <div class="module-outcomes">
+                        <h4><i class="fas fa-trophy"></i> Learning Outcomes</h4>
+                        <ul>
+                            <li>Develop a complete AR/VR application</li>
+                            <li>Understand emerging XR technologies</li>
+                            <li>Manage XR project lifecycle</li>
+                            <li>Present and demonstrate XR projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="speakers">
+        <div class="container">
+            <h2>Industry Expert Faculty</h2>
+            <p class="program-description">Learn from leading AR/VR experts from top companies and academic institutions</p>
+            
+            <div class="speaker-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=3149&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>Dr. Rajesh Kumar</h3>
+                        <span class="speaker-title">XR Lead, Google</span>
+                        <p class="speaker-bio">15+ years experience in AR/VR, leading Google's Daydream platform development. PhD in Human-Computer Interaction from Stanford.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">ARCore</span>
+                            <span class="expertise-tag">Mobile AR</span>
+                            <span class="expertise-tag">UX Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=3087&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>Prof. Anjali Mehta</h3>
+                        <span class="speaker-title">Professor, IIT Delhi</span>
+                        <p class="speaker-bio">Head of Human-Centered Computing Lab at IIT Delhi. Published over 50 papers on VR interaction techniques.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">VR Interaction</span>
+                            <span class="expertise-tag">HCI Research</span>
+                            <span class="expertise-tag">Spatial Computing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3087&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>Michael Chen</h3>
+                        <span class="speaker-title">Technical Director, Unity Technologies</span>
+                        <p class="speaker-bio">Leads Unity's AR/VR evangelism team. Creator of multiple award-winning AR applications for enterprise clients.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">Unity AR</span>
+                            <span class="expertise-tag">XR Architecture</span>
+                            <span class="expertise-tag">Performance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=3088&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>Sarah Johnson</h3>
+                        <span class="speaker-title">Lead Developer, Oculus Studios</span>
+                        <p class="speaker-bio">8 years experience developing VR games and experiences for Oculus Rift and Quest platforms.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">Unreal Engine</span>
+                            <span class="expertise-tag">VR Games</span>
+                            <span class="expertise-tag">Performance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=3087&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>David Park</h3>
+                        <span class="speaker-title">CTO, AR Startup</span>
+                        <p class="speaker-bio">Serial entrepreneur with 3 successful AR startup exits. Specializes in WebXR and markerless AR solutions.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">WebXR</span>
+                            <span class="expertise-tag">Startups</span>
+                            <span class="expertise-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-image" style="background-image: url('https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=3087&auto=format&fit=crop');"></div>
+                    <div class="speaker-info">
+                        <h3>Priya Sharma</h3>
+                        <span class="speaker-title">Lead 3D Artist, Industrial Light & Magic</span>
+                        <p class="speaker-bio">10+ years creating 3D assets for films and VR experiences. Worked on Star Wars VR and Marvel projects.</p>
+                        <div class="speaker-expertise">
+                            <span class="expertise-tag">3D Modeling</span>
+                            <span class="expertise-tag">Blender</span>
+                            <span class="expertise-tag">PBR Texturing</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -546,40 +893,6 @@
                 <div class="career-card">
                     <h3>Simulation Engineer</h3>
                     <p>Design simulations for training, education, and other practical applications.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="outcomes">
-        <div class="container">
-            <h2>Learning Outcomes</h2>
-            <p class="program-description">By the end of this program, you will have gained valuable skills that will make you industry-ready.</p>
-            
-            <div class="skills-list">
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Proficiency in industry-standard 3D software and UI navigation</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Ability to design and develop immersive AR/VR experiences</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Understanding of AR/VR hardware and physical structure</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Knowledge of programming languages and game engines relevant to AR/VR</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Skills in project management and teamwork</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Ability to optimize AR/VR applications for performance</span>
                 </div>
             </div>
         </div>
@@ -660,7 +973,7 @@
             <p>Transform your career with our comprehensive AR/VR training program</p>
             <a href="#" class="cta-button">Apply Now</a>
             <div class="copyright">
-               
+
             </div>
         </div>
     </footer>
