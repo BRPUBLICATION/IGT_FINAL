@@ -1,162 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Master Program in AR/VR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #eef2f3, #8e9eab);
-      color: #2c3e50;
-      line-height: 1.6;
-    }
-
-    header, section, footer {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 25px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    h1, h2, h3 {
-      color: #1a1a1a;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .highlight {
-      color: #e91e63;
-      font-weight: bold;
-    }
-
-    .contact {
-      background: #fff3cd;
-    }
-
-    .fee {
-      background: #d0f0f6;
-    }
-
-    .organisers {
-      background: #f3e5f5;
-    }
-
-    a.button {
-      display: inline-block;
-      text-decoration: none;
-      padding: 14px 24px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-      margin: 20px auto;
-      display: block;
-      width: max-content;
-      transition: background-color 0.3s ease;
-    }
-
-    a.button:hover {
-      background-color: #0056b3;
-    }
-
-    .icon {
-      margin-right: 8px;
-      color: #007bff;
-    }
-
-    @media screen and (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Program in AR/VR | Aviana HV Bioscience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a00f4;
+            --secondary: #00a8ff;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #ff6b6b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop') no-repeat center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .highlight-box {
+            background: rgba(255,255,255,0.9);
+            color: var(--dark);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .program-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .highlight-item {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 15px 20px;
+            min-width: 120px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .highlight-item .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .highlight-item .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background-color: #ff5252;
+        }
+        
+        .start-date {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .program-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .curriculum {
+            background-color: var(--light);
+        }
+        
+        .module {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .module h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module h3 i {
+            margin-right: 10px;
+        }
+        
+        .module ul {
+            list-style-type: none;
+        }
+        
+        .module li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .module li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .career-paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .career-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .career-card:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .career-card:hover h3 {
+            color: white;
+        }
+        
+        .career-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .outcomes {
+            background-color: var(--light);
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .skill-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+        }
+        
+        .benefits {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .benefits h2 {
+            color: white;
+        }
+        
+        .benefits h2::after {
+            background: white;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-icon {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .benefit-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .highlight-item {
+                min-width: 100px;
+                padding: 10px 15px;
+            }
+            
+            .highlight-item .number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>Master Program in AR/VR</h1>
-    <p><strong>Organised by:</strong> <br>
-      <span class="highlight">Aviana HV Bioscience Pvt Ltd</span> in collaboration with
-      <span class="highlight">INSTITUTE OF GLOBAL TECHNOLOGY</span> and
-      <span class="highlight">Intrino Robotics & Technologies Pvt Ltd</span>
-    </p>
-  </header>
-
-  <section>
-    <h2><i class="fas fa-chalkboard-teacher icon"></i> Expert Faculty</h2>
-    <ul>
-      <li><strong>Mr. Manas Khare</strong> – AR/VR Engineer, Google Inc.</li>
-      <li><strong>Mr. Sridhar</strong> – Founder & CEO, XR Developer, Intrino Robotics & Technologies Pvt Ltd.</li>
-      <li><strong>Mr. Stalin Mani</strong> – Principal XR Architect, Intrino Technologies.</li>
-      <li><strong>Mr. Premkumar</strong> – Former Senior AR/VR/MR Specialist at Ford.</li>
-      <li><strong>Dr. Meena Kannan</strong> – Senior XR Developer, Intrino Technologies.</li>
-      <li><strong>Mr. Balaji</strong> – AR/VR Developer, Asst. Professor at KCT.</li>
-      <li><strong>Mr. Alekh Johari</strong> – AI Solutions Architect for AR/VR.</li>
-      <li><strong>Dr. Mangal Raj</strong> – PDF, IIT Bombay.</li>
-      <li><strong>Dr. Veera Talukdar</strong> – Founder, Anemoi Solution, XR Expert, PhD from IIIT.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-book icon"></i> Program Curriculum</h2>
-    <h3>Semester 1: Foundations of AR/VR</h3>
-    <ul>
-      <li><strong>Introduction to AR/VR:</strong> History, trends, applications. (4 credits)</li>
-      <li><strong>3D Modeling & Animation:</strong> Blender, animation principles. (4 credits)</li>
-      <li><strong>Programming for AR/VR:</strong> C#, Java, Python, Unity, Unreal Engine. (4 credits)</li>
-      <li><strong>User Experience Design:</strong> UX principles & tools. (4 credits)</li>
-      <li><strong>AR/VR Development Fundamentals:</strong> Hardware, immersive design. (4 credits)</li>
-    </ul>
-
-    <h3>Semester 2: Advanced AR/VR Development</h3>
-    <ul>
-      <li><strong>Advanced AR/VR Techniques:</strong> AI/ML integration. (4 credits)</li>
-      <li><strong>Project Management & Teamwork:</strong> Agile, collaboration. (4 credits)</li>
-      <li><strong>Specialized Topics:</strong> AR/VR in healthcare, education. (4 credits)</li>
-      <li><strong>Capstone Project:</strong> Portfolio-based development. (8 credits)</li>
-      <li><strong>Internship & Industry Exposure:</strong> Hands-on AR/VR training. (4 credits)</li>
-    </ul>
-  </section>
-
-  <section class="fee">
-    <h2><i class="fas fa-money-bill-wave icon"></i> Program Fee</h2>
-    <ul>
-      <li><strong>Total Fee:</strong> Rs. 1,24,999</li>
-      <li><strong>Early Bird Admission Fee:</strong> Rs. 89,999 <span style="color:#d32f2f;">(Till August 15th, 2025)</span></li>
-      <li><strong>EMI Options:</strong> Available</li>
-    </ul>
-  </section>
-
-  <section class="contact">
-    <h2><i class="fas fa-phone icon"></i> Contact Us</h2>
-    <p><strong><i class="fas fa-phone-alt"></i> Phone:</strong> +91 88673 94159</p>
-    <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:info@igteu.in">info@igteu.in</a></p>
-    <p><strong><i class="fas fa-qrcode"></i> Scan & Register:</strong> Admission open now</p>
-  </section>
-
-  <footer class="organisers">
-    <h2><i class="fas fa-users icon"></i> Organisers</h2>
-    <ul>
-      <li>INSTITUTE OF GLOBAL TECHNOLOGY</li>
-      <li>Intrino Robotics & Technologies Pvt Ltd</li>
-      <li>AVIANA HV BIOSCIENCE PVT LTD</li>
-    </ul>
-  </footer>
-
-  <div style="text-align: center;">
-    <a class="button" href="https://forms.zohopublic.in/instituteofglobaltechnology1/form/MASTERPROGRAMADMISSIONFORM/formperma/WCGLkkYQzlxH7qsqnOVtsZupCg4Yo5MbReRCc75Mjlc" target="_blank">
-      <i class="fas fa-file-alt"></i> Apply Now
-    </a>
-  </div>
-
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-vr-cardboard"></i>
+                <span>AVIANA HV BIOSCIENCE</span>
+            </div>
+            <h1>Master Program in AR/VR</h1>
+            <p class="tagline">Learn from experts of Google, IITs and top industries</p>
+            
+            <div class="highlight-box">
+                <p>The Master program in AR/VR is a comprehensive program designed to equip students with the skills and knowledge necessary to design, develop, and deploy cutting-edge applications for AR/VR platforms. This program combines theoretical foundations with practical skills, ensuring students are well-prepared for the industry.</p>
+                
+                <div class="program-highlights">
+                    <div class="highlight-item">
+                        <div class="number">25+</div>
+                        <div class="label">Experts</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="number">100+</div>
+                        <div class="label">Partners</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="number">10k+</div>
+                        <div class="label">Students</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="number">10+</div>
+                        <div class="label">Projects</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="number">35+</div>
+                        <div class="label">Use Cases</div>
+                    </div>
+                </div>
+                
+                <a href="#apply" class="cta-button">Join Us Today!</a>
+                <div class="start-date">Starts from Sep 2025 (ONLINE & OFFLINE)</div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="features">
+        <div class="container">
+            <h2>Program Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Flexible Duration</h3>
+                    <p>12-month comprehensive program with flexible learning hours to suit your schedule.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Dual Mode</h3>
+                    <p>Available both online and offline to accommodate different learning preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Hands-on Practice</h3>
+                    <p>Practical training in essential skills like lighting, rendering, and optimization.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Portfolio Building</h3>
+                    <p>Opportunities to build a professional portfolio through project-based learning.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Internship Opportunities</h3>
+                    <p>Real-world exposure and networking through our industry partnerships.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>EU Accredited</h3>
+                    <p>Receive an EU accredited course completion certificate upon graduation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="curriculum">
+        <div class="container">
+            <h2>Curriculum</h2>
+            <p class="program-description">Our comprehensive curriculum covers all aspects of AR/VR development to prepare you for a successful career in this exciting field.</p>
+            
+            <div class="module">
+                <h3><i class="fas fa-cube"></i> AR/VR Development</h3>
+                <ul>
+                    <li>Design and develop immersive AR/VR experiences</li>
+                    <li>Understand AR/VR hardware and physical structure</li>
+                    <li>Create interactive environments and applications</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3><i class="fas fa-cubes"></i> 3D Modeling and Animation</h3>
+                <ul>
+                    <li>Master industry-standard 3D software</li>
+                    <li>Learn advanced modeling techniques</li>
+                    <li>Create realistic animations for virtual environments</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3><i class="fas fa-user-circle"></i> User Experience Design</h3>
+                <ul>
+                    <li>Create intuitive and engaging user experiences</li>
+                    <li>Understand UX principles for immersive technologies</li>
+                    <li>Design effective user interfaces for AR/VR</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3><i class="fas fa-code"></i> Programming</h3>
+                <ul>
+                    <li>Gain skills in programming languages for AR/VR</li>
+                    <li>Master game engines like Unity and Unreal</li>
+                    <li>Develop interactive functionality</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                <ul>
+                    <li>Plan and execute AR/VR projects</li>
+                    <li>Work effectively in teams</li>
+                    <li>Manage timelines and deliverables</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="careers">
+        <div class="container">
+            <h2>Career Paths</h2>
+            <p class="program-description">Graduates of our program can pursue various exciting career opportunities in the AR/VR industry.</p>
+            
+            <div class="career-paths">
+                <div class="career-card">
+                    <h3>Unreal Developer</h3>
+                    <p>Create immersive experiences using Unreal Engine for various applications.</p>
+                </div>
+                <div class="career-card">
+                    <h3>XR Developer</h3>
+                    <p>Develop cross-platform experiences integrating VR, AR, and mixed reality.</p>
+                </div>
+                <div class="career-card">
+                    <h3>3D Modeler</h3>
+                    <p>Design assets and environments for virtual worlds and applications.</p>
+                </div>
+                <div class="career-card">
+                    <h3>UX Designer</h3>
+                    <p>Create intuitive and engaging user experiences for immersive technologies.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Simulation Engineer</h3>
+                    <p>Design simulations for training, education, and other practical applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="outcomes">
+        <div class="container">
+            <h2>Learning Outcomes</h2>
+            <p class="program-description">By the end of this program, you will have gained valuable skills that will make you industry-ready.</p>
+            
+            <div class="skills-list">
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Proficiency in industry-standard 3D software and UI navigation</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Ability to design and develop immersive AR/VR experiences</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Understanding of AR/VR hardware and physical structure</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Knowledge of programming languages and game engines relevant to AR/VR</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Skills in project management and teamwork</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Ability to optimize AR/VR applications for performance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="container">
+            <h2>Program Benefits</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>EU Accredited Certificate</h3>
+                    <p>Receive a recognized certification upon completion of the program.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Live Classes with Recordings</h3>
+                    <p>Attend live sessions with flexible hours and access recordings anytime.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Job Assistance</h3>
+                    <p>Get support with resume building, interview preparation, and job placement.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Industrial Exposure</h3>
+                    <p>Gain real-world experience through internships and industry projects.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-hands"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>Hands-on Experience</h3>
+                    <p>Work on practical projects covering all aspects of AR/VR development.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="benefit-content">
+                    <h3>24/7 Study Materials</h3>
+                    <p>Access comprehensive learning resources anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="apply">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-vr-cardboard"></i>
+                <span>AR/VR MASTER PROGRAM</span>
+            </div>
+            <p>Transform your career with our comprehensive AR/VR training program</p>
+            <a href="#" class="cta-button">Apply Now</a>
+            <div class="copyright">
+                &copy; 2025 Aviana HV Bioscience Pvt Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
